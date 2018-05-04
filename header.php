@@ -32,7 +32,7 @@
 						<span class="symbol">
 							<?php the_custom_logo(); ?><!-- Render logo -->
 						</span><!-- /.ends symbol -->
-						<span class="title">
+						<span class="title custom-title">
 							<p class="site-title">
 								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 							</p>
