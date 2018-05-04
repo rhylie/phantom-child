@@ -15,39 +15,36 @@ get_header();
 		<div class="inner">
 				
 				<header>
-					<h1><?php the_title(); ?></h1>
-
+					<h1>Dynamic header renders here..</h1>
 					<p>Etiam quis viverra lorem, in semper lorem. Sed nisl arcu euismod sit amet nisi euismod sed cursus arcu elementum ipsum arcu vivamus quis venenatis orci lorem ipsum et magna feugiat veroeros aliquam. Lorem ipsum dolor sit amet nullam dolore.</p>
-
 				</header>
-				<section class="tiles">
-					<article class="style1">
-						<span class="image">
-							<img src="http://localhost/wp-content/uploads/2018/05/pic01.jpg" alt="" />
-						</span>
-						<a href="generic.html">
-							<h2>Magna</h2>
-							<div class="content">
-								<p>Sed nisl arcu euismod sit amet nisi lorem etiam dolor veroeros et feugiat.</p>
-							</div>
-						</a>
-					</article>
-				</section>
 
-				<p>
-				    <?php 
-				    $id = get_the_ID();
-				    $cats = get_the_category($id);
-				    echo ( count($cats) == 1  ? 'Category: ' : 'Categories: ');
-				    $c = 0; $n = 0;
-				    $c = count($cats);
-				    foreach ( $cats as $cat ):
-				        $n++; ?>
-				        <a href="<?php echo get_category_link($cat->cat_ID); ?>">
-				            <?php echo $cat->name; echo ( $n > 0 && $n < $c ? ', ' : ''); ?>
-				        </a>
-				    <?php endforeach; ?>
-				</p>
+				<?php
+				if ( have_posts() ) :
+
+					/* Start the Loop */
+					while ( have_posts() ) :
+						the_post();
+
+						/*
+						 * Include the Post-Type-specific template for the content.
+						 * If you want to override this in a child theme, then include a file
+						 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
+						 */
+						get_template_part( 'template-parts/content', get_post_type() );
+
+
+
+					endwhile;
+
+					the_posts_navigation();
+
+				else :
+
+					get_template_part( 'template-parts/content', 'none' );
+
+				endif;
+				?>
 				
 		</div><!--/. ends inner -->
 	</div><!-- /. ends main -->
