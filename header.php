@@ -45,16 +45,20 @@
 							<li><a href="#menu">Menu</a></li>
 						</ul>
 					</nav>
-					
+
 				<!-- Menu -->
-					<nav id="menu" class="main-navigation">
+					<nav id="menu">
 						<!-- <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'phantom' ); ?></button> -->
 						<?php
 						wp_nav_menu( array(
 							'theme_location' => 'menu-1',
-							'menu_id'        => 'primary-menu',
+							'menu_id'        => '',
+							'container'      => FALSE,
+							'menu_class'     => 'menu-list-wrapper',
 						) );
+
 						?>
+
 					</nav><!-- #site-navigation -->
 
 			</div>
