@@ -42,7 +42,7 @@
 				<!-- Nav -->
 					<nav>
 						<ul>
-							<li><a href="#menu">Menu</a></li>
+							<li><a href="#menu">MENU</a></li>
 						</ul>
 					</nav>
 
