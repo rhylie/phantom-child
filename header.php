@@ -27,25 +27,28 @@
 		<header id="header">
 			<div class="inner">
 
+
+				<?php 
+					$custom_logo_id = get_theme_mod( 'custom_logo' );
+					$image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+				?>
+
 				<!-- Logo -->
-					<a href="index.html" class="logo">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo">
 						<span class="symbol">
-							<?php the_custom_logo(); ?><!-- Render logo -->
-						</span><!-- /.ends symbol -->
+							<img src="<?php echo $image[0]; ?>">
+						</span>
 						<span class="title">
 							<?php bloginfo( 'name' ); ?>		
 						</span>
-						<!-- <span class="title custom-title">
-							<p class="site-title">
-								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-							</p>
-						</span> -->
-					</a>
+
+					</a> 
+
 
 				<!-- Nav -->
 					<nav>
 						<ul>
-							<li><a href="#menu">MENU</a></li>
+							<li><a href="#menu">Menu</a></li>
 						</ul>
 					</nav>
 
