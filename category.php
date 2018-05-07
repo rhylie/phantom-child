@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying archive pages
+ * The template for displaying categories.
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -10,7 +10,7 @@
 get_header();
 ?>
 
-	<div id="primary" class="content-area child-category">
+	<div id="primary" class="content-area category-child-template">
 		<main id="main" class="site-main">
 
 		<?php if ( have_posts() ) : ?>
@@ -21,9 +21,6 @@ get_header();
 				the_archive_description( '<div class="archive-description">', '</div>' );
 				?>
 			</header><!-- .page-header -->
-
-
-			<?php if (function_exists('z_taxonomy_image')) z_taxonomy_image(); ?>
 
 			<?php
 			/* Start the Loop */

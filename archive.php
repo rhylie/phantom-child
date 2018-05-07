@@ -11,7 +11,7 @@ get_header();
 ?>
 
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main child-archive-template">
+		<main id="main" class="site-main archive-child-template">
 
 		<?php if ( have_posts() ) : ?>
 
