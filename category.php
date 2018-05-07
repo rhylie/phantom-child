@@ -10,8 +10,8 @@
 get_header();
 ?>
 
-	<div id="primary" class="content-area category-child-template">
-		<main id="main" class="site-main">
+	<div id="main" class="content-area category-child-template">
+		<div id="category_child" class="inner">
 
 		<?php if ( have_posts() ) : ?>
 
@@ -45,8 +45,8 @@ get_header();
 		endif;
 		?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+		</div><!-- inner -->
+	</div><!-- #main -->
 
 <?php
 
